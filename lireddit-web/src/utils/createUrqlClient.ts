@@ -11,7 +11,7 @@ import { cacheExchange } from "@urql/exchange-graphcache";
 
 export const createUrqlClient = (ssrExchange: any) => ({
   url: "http://localhost:4000/graphql",
-  fetchOptions: { credentials: "include" },
+  fetchOptions: { credentials: "include" as const },
   exchanges: [
     dedupExchange,
     cacheExchange({
@@ -60,6 +60,7 @@ export const createUrqlClient = (ssrExchange: any) => ({
         },
       },
     }),
+    ssrExchange,
     fetchExchange,
   ],
 });
