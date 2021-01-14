@@ -14,9 +14,11 @@ import { User } from "./entities/User";
 import { HelloResolver } from "./resolvers/hello";
 import { PostResolver } from "./resolvers/post";
 import { UserResolver } from "./resolvers/user";
-
+import path from "path";
+import { Updoot } from "./entities/Updoot";
 // import { sendEmail } from "./utils/sendEmail";
 // import { User } from "./entities/User";
+//rerun
 const main = async () => {
     const conn = await createConnection({
         type: "postgres",
@@ -25,9 +27,11 @@ const main = async () => {
         password: "tuanga99",
         logging: true,
         synchronize: true,
-        entities: [Post, User],
+        migrations: [path.join(__dirname, "./migrations/*")],
+        entities: [Post, User, Updoot],
     });
-
+    await conn.runMigrations();
+    // await Post.delete({});
     const app = express();
     const RedisStore = connectRedis(session);
     const redis = new Redis();
@@ -71,12 +75,6 @@ const main = async () => {
     app.listen(4000, () => {
         console.log("server started on local host:4000");
     });
-
-    //   const post = orm.em.create(Post, { title: "my first post" });
-    //   await orm.em.persistAndFlush(post);
-
-    //   const posts = await orm.em.find(Post, {});
-    //   console.log(posts);
 };
 
 main().catch((err) => {
