@@ -29,6 +29,7 @@
         "express-session": "^1.17.1",
         "graphql": "^15.4.0",
         "ioredis": "^4.19.4",
+        "next-apollo": "^5.0.4",
         "nodemailer": "^6.4.17",
         "pg": "^8.5.1",
         "reflect-metadata": "^0.1.13",
