@@ -1,5 +1,5 @@
 ## Summary
-A project that I am currently working on, it has a Reddit-like interface where users can post statuss that anyone that sign in can comment and vote on. I am currenly working on developing a real-time chat system for it. I also host it **at https://codeswonder.com/.**
+A project that I am currently working on, it has a Reddit-like interface where users can post statuses that anyone that sign in can comment and vote on. I am currenly working on developing a real-time chat system for it. I also host it **at https://codeswonder.com/.**
 
 ## Getting Started
 
